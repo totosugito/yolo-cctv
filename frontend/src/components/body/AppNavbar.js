@@ -5,11 +5,20 @@ import {FaRegMap} from "react-icons/fa";
 import {BsCameraReels} from "react-icons/bs";
 import logo from "../../assets/logo.png"
 
-const AppNavbar = () => {
+const AppNavbar = ({timestamp, lastCheck}) => {
   const navigate = useNavigate()
   const headerRef = useRef();
-  const [title, setTitle] = useState("");
 
+  const timestampToText = () => {
+    if(timestamp === "") {
+      return ("-");
+    }
+    const [datePart, timePart] = timestamp.split('_');
+    const [year, month, day] = datePart.split('-');
+    const [hour, minute, second] = timePart.split('-');
+
+    return `${day}/${month}/${year} ${hour}:${minute}:${second}`;
+  }
   return (
     <div className="navbar flex flex-row w-full items-center justify-between shadow px-2" ref={headerRef}>
       <div className={"w-full"}>
@@ -17,8 +26,9 @@ const AppNavbar = () => {
           <img src={logo} alt={""} className={"w-[32px]"}/>
           <span className={"font-bold text-lg"}>CCTV-Tracker</span>
         </div>
-        <div className="text-xl md:text-2xl truncate">
-          {title}
+        <div className="ml-[10px] p-2">
+          <div className={"text-lg md:text-xl truncate text-center text-primary"}>Server Data : {timestampToText()}</div>
+          <div className={"text-xs text-neutral"}>Last Check : {lastCheck}</div>
         </div>
       </div>
 

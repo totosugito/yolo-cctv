@@ -1,45 +1,62 @@
 import React, {useEffect, useState} from 'react';
 import {AppFooter, AppNavbar, BodyContents} from "src/components/body";
 import {WebLoading} from "src/components/views";
-import CctvMap from "src/components/map/CctvMap";
 import {httpGet} from "src/service/http-api";
-import {SERVER_URL} from "src/constant/app-variables";
-import {getCctvImage} from "src/constant/map-data";
+import {IntervalCheckApi, SERVER_URL} from "src/constant/app-variables";
+import {getCctvImage, getFormattedDateTime} from "src/constant/map-data";
 import {FaBus, FaCarSide, FaMotorcycle, FaTruck} from "react-icons/fa";
 import DialogCctvDetails from "src/components/map/DialogCctvDetails";
+import toast from "react-hot-toast";
 
 function UiMonitoring() {
+  const [confirmationModal, setConfirmationModal] = useState(null);
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(null);
-  const [confirmationModal, setConfirmationModal] = useState(null);
+  const [lastCheck, setLastCheck] = useState("");
 
-  const get_data = async (body) => {
-    await httpGet(SERVER_URL + "/cctv-latest", body).then(response => {
+  const get_data = async (showLoading=false) => {
+    if(showLoading) {
+      setLoading(true);
+    }
+    await httpGet(SERVER_URL + "/cctv-latest", {}).then(response => {
       if (response.isError) {
         console.log(response);
       } else {
-        setData(response);
+        if(data?.timestamp !== response?.timestamp) {
+          setData(response);
+        }
       }
     });
+    setLastCheck(getFormattedDateTime());
+    toast.success("Data Updated ...");
+
+    if(showLoading) {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
-    setLoading(true);
-    get_data({}).then(r => {
+    get_data(true).then(r => {
     });
-    setLoading(false);
+
+    // Set interval to fetch data every 1 minute
+    const intervalId = setInterval(get_data, IntervalCheckApi);
+
+    // Clear interval on component unmount
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
     <div className={"h-screen flex flex-col"}>
-      <AppNavbar/>
+      <AppNavbar timestamp={data?.timestamp ?? ""} lastCheck={lastCheck}/>
       {loading ? <WebLoading/> : <BodyContents>
-        <div className={"grid grid-cols-2 gap-6"}>
+        <div className={"grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"}>
           {
             data && data?.data.map((cctv, index) => {
               return (
                 <div className={"card shadow-md"} key={index}>
-                  <img src={getCctvImage(cctv, data?.timestamp ?? "")} alt={cctv?.cctv?.cctv_name} className={""}
+                  <img src={getCctvImage(cctv, data?.timestamp ?? "")} alt={cctv?.cctv?.cctv_name}
+                       className={"min-h-[300px] object-cover rounded-t-2xl"}
                        onClick={() =>
                          setConfirmationModal({
                            btn1Text: "Close",

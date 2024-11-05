@@ -22,8 +22,8 @@ def read_cctv_list():
 
 
 # --------- CONFIGURATION ---------
-cctvId = [2, 7]  # run cctv from index FROM to index TO
-threadDelay = 3600  # delay in second
+cctvId = [2, 15]  # run cctv from index FROM to index TO
+threadDelay = 60  # delay in second
 streamDir = './streams/'  # output directory for the streamed images and data
 jpegQuality = 50  # JPEG quality for saving images
 yoloModelPath = "./static/yolo11n.pt"  # path to the YOLO model

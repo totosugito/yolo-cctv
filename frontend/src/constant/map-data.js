@@ -54,11 +54,11 @@ export function defaultMapProps() {
 }
 
 export function getMarkerColor(value) {
-  if (value < 6) {
+  if (value < 4) {
     return "#00FF00";
-  } else if (value < 12) {
+  } else if (value < 8) {
     return "#FFFF00";
-  } else if (value < 20) {
+  } else if (value < 10) {
     return "#FF8C00";
   } else {
     return "#FF0000";
@@ -67,4 +67,21 @@ export function getMarkerColor(value) {
 
 export function getCctvImage(cctv, timestamp) {
   return (SERVER_URL + "/streams/images/" + cctv?.cctv?.no + "_" + timestamp + ".jpg");
+}
+
+export function getFormattedDateTime() {
+  const now = new Date();
+
+  // Get date components
+  const day = now.getDate().toString().padStart(2, '0');
+  const month = (now.getMonth() + 1).toString().padStart(2, '0'); // Months are 0-based
+  const year = now.getFullYear();
+
+  // Get time components
+  const hours = now.getHours().toString().padStart(2, '0');
+  const minutes = now.getMinutes().toString().padStart(2, '0');
+  const seconds = now.getSeconds().toString().padStart(2, '0');
+
+  // Format as DD/MM/YYYY HH:MM:SS
+  return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
 }
