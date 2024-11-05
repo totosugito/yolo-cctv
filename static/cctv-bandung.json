@@ -32,14 +32,6 @@
     "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Ant.m3u8"
   },
   {
-    "no": "005",
-    "id": "34f1b495-d31c-4a29-9c37-d2d72f556d4f",
-    "cctv_name": "CCTV ANTAPANI-DEPAN BORMA 02",
-    "lat": "-6.912960492",
-    "lng": "107.6495927",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Antt.m3u8"
-  },
-  {
     "no": "006",
     "id": "48a4d270-9db2-4111-b94e-d026129b2802",
     "cctv_name": "CCTV BATAS KOTA 01",

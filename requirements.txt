@@ -1,0 +1,7 @@
+ultralytics
+opencv-python
+flask
+opencv-python-headless
+numpy
+Flask[async]
+flask-cors

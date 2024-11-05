@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dialog-title {
+  @apply font-bold text-sm text-center truncate my-1;
+}
+
+.dialog-item-icon {
+  @apply text-2xl;
+}
+
+.dialog-item-label {
+  @apply text-sm text-center;
+}
+
