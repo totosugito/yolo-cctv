@@ -7,7 +7,7 @@ const AppSidebar = ({timestamp, data}) => {
   const [confirmationModal, setConfirmationModal] = useState(null);
 
   return (
-    <div className={"flex flex-col min-w-[270px] p-3 overflow-auto"} style={{height: `calc(100vh - 80px)`}}>
+    <div className={"flex flex-col min-w-[270px] p-3 overflow-auto"} style={{height: `calc(100vh - 80px)`}} data-theme="dark">
       <div className={"font-bold text-lg my-2"}>List CCTV</div>
       <hr/>
 
@@ -15,7 +15,7 @@ const AppSidebar = ({timestamp, data}) => {
         return (
           <div key={index} className={"flex flex-col gap-2 mb-1"}>
             <div className={"flex flex-row gap-2 items-center"}>
-              <div className={"avatar w-[32px] h-[32px] rounded-full bg-red-200 justify-center items-center text-xs shadow-md cursor-pointer"}
+              <div className={"avatar w-[32px] h-[32px] rounded-full justify-center items-center text-xs shadow-md cursor-pointer text-neutral font-bold"}
                    style={{backgroundColor: getMarkerColor(item?.data?.total ?? 0)}}
                    onClick={() =>
                      setConfirmationModal({
