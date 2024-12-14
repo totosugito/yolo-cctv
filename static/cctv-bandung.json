@@ -13,7 +13,10 @@
     "cctv_name": "CCTV ALUN-ALUN 01 - BANCEUY",
     "lat": "-6.9211119",
     "lng": "107.606447",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/DAHUA/DepanTo.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/DAHUA/DepanTo.m3u8",
+    "roi_polygon": [
+      [[1361, 221], [1777, 647], [1900, 702], [1911, 1054], [15, 1054], [7, 769], [429, 780], [796, 661], [1244, 387], [1291, 224]]
+    ]
   },
   {
     "no": "003",
@@ -21,7 +24,10 @@
     "cctv_name": "CCTV ALUN-ALUN 02 - ASIA AFRIKA",
     "lat": "-6.9211119",
     "lng": "107.607448",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/DAHUA/DepanTop.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/DAHUA/DepanTop.m3u8",
+    "roi_polygon": [
+      [[4, 373], [8, 568], [414, 572], [567, 301], [497, 273], [124, 408]]
+    ]
   },
   {
     "no": "004",
@@ -29,7 +35,11 @@
     "cctv_name": "CCTV ANTAPANI-DEPAN BORMA 01",
     "lat": "-6.912960492",
     "lng": "107.6495927",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Ant.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Ant.m3u8",
+    "roi_polygon": [
+      [[262, 88], [619, 470], [303, 472], [183, 86]],
+      [[144, 91], [160, 472], [5, 461], [5, 275], [47, 200], [108, 97]]
+    ]
   },
   {
     "no": "006",
@@ -37,7 +47,10 @@
     "cctv_name": "CCTV BATAS KOTA 01",
     "lat": "-6.910573",
     "lng": "107.569273",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/DAHUA/BatasKo.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/DAHUA/BatasKo.m3u8",
+    "roi_polygon": [
+      [[538, 186], [621, 305], [570, 433], [457, 468], [211, 444], [134, 430], [91, 474], [0, 474], [0, 195], [156, 58], [212, 79], [197, 171], [228, 204], [358, 254], [451, 254], [464, 236], [465, 190], [474, 157]]
+    ]
   },
   {
     "no": "007",
@@ -45,7 +58,11 @@
     "cctv_name": "CCTV BATAS KOTA 02",
     "lat": "-6.910573",
     "lng": "107.568274",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/DAHUA/cibeurem.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/DAHUA/cibeurem.m3u8",
+    "roi_polygon": [
+      [[576, 472], [256, 476], [208, 320], [216, 266], [301, 220], [324, 248], [329, 284], [386, 350]],
+      [[4, 282], [8, 333], [184, 262], [288, 218], [260, 216], [166, 242], [126, 245]]
+    ]
   },
   {
     "no": "008",
@@ -53,7 +70,10 @@
     "cctv_name": "CCTV BORMA CIKUTRA 01",
     "lat": "-6.892402487365577",
     "lng": "107.63077685713263",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/CIK.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/CIK.m3u8",
+    "roi_polygon": [
+      [[148, 126], [238, 476], [596, 472], [443, 149], [441, 112], [402, 78], [314, 121]]
+    ]
   },
   {
     "no": "009",
@@ -61,7 +81,10 @@
     "cctv_name": "CCTV BORMA CIKUTRA 02",
     "lat": "-6.892471720820854",
     "lng": "107.63082504206722",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/CIKUT.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/CIKUT.m3u8",
+    "roi_polygon": [
+      [[108, 479], [361, 126], [402, 131], [449, 298], [425, 477]]
+    ]
   },
   {
     "no": "010",
@@ -69,7 +92,10 @@
     "cctv_name": "CCTV BRAGA 01",
     "lat": "-6.916058437195357",
     "lng": "107.60897040367128",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/braga.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/braga.m3u8",
+    "roi_polygon": [
+      [[3, 360], [7, 475], [516, 470], [433, 398], [417, 348], [424, 283], [480, 180], [472, 170], [510, 110], [478, 96]]
+    ]
   },
   {
     "no": "011",
@@ -77,7 +103,10 @@
     "cctv_name": "CCTV BRAGA 02",
     "lat": "-6.916409912444856",
     "lng": "107.60917961597444",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/bragaa.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/bragaa.m3u8",
+    "roi_polygon": [
+      [[635, 371], [633, 477], [260, 477], [229, 376], [243, 300], [206, 297], [154, 432], [58, 205], [262, 30], [291, 4], [370, 7], [361, 58], [462, 231]]
+    ]
   },
   {
     "no": "012",
@@ -85,7 +114,10 @@
     "cctv_name": "CCTV BRAGA 03",
     "lat": "-6.916612276863802",
     "lng": "107.60905623435974",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/bragaaa.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/bragaaa.m3u8",
+    "roi_polygon": [
+      [[4, 374], [4, 471], [632, 470], [624, 181], [332, 150], [214, 95], [182, 61], [145, 71], [190, 147], [190, 196]]
+    ]
   },
   {
     "no": "013",
@@ -93,7 +125,10 @@
     "cctv_name": "CCTV BRAGA 1-NARIPAN 01",
     "lat": "-6.918463484",
     "lng": "107.6090299",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Nar.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Nar.m3u8",
+    "roi_polygon": [
+      [[2, 328], [8, 475], [634, 476], [633, 298], [538, 315], [247, 229], [125, 151], [91, 181], [104, 220], [99, 259]]
+    ]
   },
   {
     "no": "014",
@@ -101,7 +136,10 @@
     "cctv_name": "CCTV BRAGA 1-NARIPAN 02",
     "lat": "-6.918463484",
     "lng": "107.6090299",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Nari.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Nari.m3u8",
+    "roi_polygon": [
+      [[607, 255], [562, 475], [9, 477], [15, 337], [80, 266], [171, 198], [193, 227], [232, 276], [315, 307], [390, 322]]
+    ]
   },
   {
     "no": "015",
@@ -109,7 +147,10 @@
     "cctv_name": "CCTV BUAH BATU-DEPAN GRIYA 02",
     "lat": "-6.940382915",
     "lng": "107.6264325",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Buahgriya.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Buahgriya.m3u8",
+    "roi_polygon": [
+      [[109, 190], [174, 472], [629, 474], [640, 315], [504, 245], [488, 212], [518, 193], [488, 158], [373, 165], [244, 106], [200, 89]]
+    ]
   },
   {
     "no": "016",
@@ -117,7 +158,10 @@
     "cctv_name": "CCTV BUBAT KORDON",
     "lat": "-6.954330422557271",
     "lng": "107.64021813869478",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/DAHUA/BUB.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/DAHUA/BUB.m3u8",
+    "roi_polygon": [
+      [[14, 470], [348, 474], [528, 183], [508, 164], [464, 168], [257, 150], [207, 163], [242, 198]]
+    ]
   },
   {
     "no": "017",
@@ -125,7 +169,11 @@
     "cctv_name": "CCTV BURANGRANG BPI 01",
     "lat": "-6.923577820306894",
     "lng": "107.61991394751718",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/burangrangbpi.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/burangrangbpi.m3u8",
+    "roi_polygon": [
+      [[4, 472], [405, 180], [386, 151], [420, 154], [433, 168], [431, 206], [440, 476]],
+      [[2, 314], [2, 456], [393, 176], [372, 144], [352, 164]]
+    ]
   },
   {
     "no": "018",
@@ -133,7 +181,10 @@
     "cctv_name": "CCTV BURANGRANG BPI 02",
     "lat": "-6.92431271109725",
     "lng": "107.6199354189856",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/burangrangbpii.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/burangrangbpii.m3u8",
+    "roi_polygon": [
+      [[252, 168], [396, 476], [634, 475], [634, 297], [506, 199], [506, 175], [486, 174], [470, 185], [499, 252], [434, 256], [284, 155]]
+    ]
   },
   {
     "no": "019",
@@ -141,7 +192,10 @@
     "cctv_name": "CCTV CIATEUL 01",
     "lat": "-6.932135499334638",
     "lng": "107.60696947574617",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/DAHUA/CIAT.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/DAHUA/CIAT.m3u8",
+    "roi_polygon": [
+      [[116, 202], [184, 477], [556, 480], [160, 184]]
+    ]
   },
   {
     "no": "020",
@@ -149,7 +203,10 @@
     "cctv_name": "CCTV CIATEUL 02",
     "lat": "-6.932092897708026",
     "lng": "107.6065617799759",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/DAHUA/CIA.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/DAHUA/CIA.m3u8",
+    "roi_polygon": [
+      [[2, 52], [9, 471], [637, 474], [631, 311], [606, 253], [626, 114], [570, 87], [405, 150], [148, 105]]
+    ]
   },
   {
     "no": "021",
@@ -157,7 +214,10 @@
     "cctv_name": "CCTV CIBADUYUT-DEKAT TPS 01",
     "lat": "-6.961645032",
     "lng": "107.5945249",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Cibatps.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Cibatps.m3u8",
+    "roi_polygon": [
+      [[58, 206], [236, 474], [635, 476], [632, 306], [166, 171]]
+    ]
   },
   {
     "no": "022",
@@ -165,7 +225,10 @@
     "cctv_name": "CCTV CIBADUYUT-DEKAT TPS 02",
     "lat": "-6.961645032",
     "lng": "107.5945249",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Cibaytps.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Cibaytps.m3u8",
+    "roi_polygon": [
+      [[2, 265], [338, 92], [410, 102], [198, 476], [6, 475]]
+    ]
   },
   {
     "no": "023",
@@ -173,7 +236,11 @@
     "cctv_name": "CCTV CICABE_01 ",
     "lat": "-6.902281",
     "lng": "107.659507",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/DAHUA/CICA.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/DAHUA/CICA.m3u8",
+    "roi_polygon": [
+      [[114, 103], [276, 286], [119, 285], [102, 165], [107, 119]],
+      [[123, 100], [302, 285], [348, 283], [350, 249], [144, 93]]
+    ]
   },
   {
     "no": "024",
@@ -205,7 +272,10 @@
     "cctv_name": "CCTV CICENDO - KB KAWUNG 01",
     "lat": "-6.912707",
     "lng": "107.604962",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/DAHUA/Cicendo.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/DAHUA/Cicendo.m3u8",
+    "roi_polygon": [
+      [[3, 269], [247, 163], [442, 41], [513, 56], [448, 174], [206, 573], [3, 570]]
+    ]
   },
   {
     "no": "028",
@@ -221,7 +291,10 @@
     "cctv_name": "CCTV CICENDO - KB KAWUNG 03",
     "lat": "-6.912707",
     "lng": "107.605964",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/DAHUA/Cicen.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/DAHUA/Cicen.m3u8",
+    "roi_polygon": [
+      [[5, 266], [148, 278], [275, 236], [478, 96], [522, 97], [534, 256], [702, 388], [698, 571], [8, 570]]
+    ]
   },
   {
     "no": "030",
@@ -237,7 +310,10 @@
     "cctv_name": "CCTV CIHAMPELAS_02 ",
     "lat": "-6.9001739",
     "lng": "107.6041544",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/DAHUA/CIH.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/DAHUA/CIH.m3u8",
+    "roi_polygon": [
+      [[2, 329], [45, 366], [0, 398], [12, 703], [332, 714], [405, 542], [566, 322], [623, 322], [661, 282], [596, 270], [656, 196], [535, 194], [407, 260], [345, 279], [16, 274]]
+    ]
   },
   {
     "no": "032",
@@ -245,7 +321,10 @@
     "cctv_name": "CCTV CIHAMPELAS-GANDOK 01 ",
     "lat": "-6.883924075",
     "lng": "107.6051868",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Cihampelasgan.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Cihampelasgan.m3u8",
+    "roi_polygon": [
+      [[1, 412], [458, 124], [486, 162], [482, 285], [410, 478], [4, 474]]
+    ]
   },
   {
     "no": "033",
@@ -253,7 +332,10 @@
     "cctv_name": "CCTV CIHAMPELAS-GANDOK 02",
     "lat": "-6.883924075",
     "lng": "107.6051868",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/CihampelasGand.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/CihampelasGand.m3u8",
+    "roi_polygon": [
+      [[637, 319], [636, 475], [128, 475], [64, 244], [245, 118], [356, 111], [355, 155], [365, 194]]
+    ]
   },
   {
     "no": "034",
@@ -317,7 +399,10 @@
     "cctv_name": "CCTV CIJERAH PAL TILU 02",
     "lat": "-6.915083890817541",
     "lng": "107.57144629955293",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/paltiluu.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/paltiluu.m3u8",
+    "roi_polygon": [
+      [[434, 474], [6, 475], [2, 286], [106, 307], [270, 189], [316, 206], [425, 88], [456, 86], [456, 143]]
+    ]
   },
   {
     "no": "042",
@@ -325,7 +410,10 @@
     "cctv_name": "CCTV CIKUTRA-TMP 01",
     "lat": "-6.892910716",
     "lng": "107.6353189",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Ciktm.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Ciktm.m3u8",
+    "roi_polygon": [
+      [[3, 242], [5, 477], [260, 478], [478, 225], [472, 116], [436, 112], [387, 167], [152, 170], [150, 198], [178, 216], [144, 252]]
+    ]
   },
   {
     "no": "043",
@@ -333,7 +421,10 @@
     "cctv_name": "CCTV CIKUTRA-TMP 02",
     "lat": "-6.892910716",
     "lng": "107.6353189",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Ciktmp.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Ciktmp.m3u8",
+    "roi_polygon": [
+      [[206, 64], [203, 112], [72, 284], [5, 303], [8, 476], [637, 474], [638, 76], [552, 46], [540, 59], [573, 92], [556, 112], [317, 38], [279, 34], [274, 50], [344, 119], [305, 162], [254, 161], [226, 59]]
+    ]
   },
   {
     "no": "044",
@@ -365,7 +456,10 @@
     "cctv_name": "CCTV CIMINDI-KHARISMA_01 ",
     "lat": "-6.899308",
     "lng": "107.562477",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/DAHUA/CIMI.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/DAHUA/CIMI.m3u8",
+    "roi_polygon": [
+      [[231, 112], [327, 356], [631, 359], [637, 290], [285, 113]]
+    ]
   },
   {
     "no": "048",
@@ -397,7 +491,10 @@
     "cctv_name": "CCTV CIPAGANTI-NYLAND 01",
     "lat": "-6.90212695",
     "lng": "107.6028763",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Cipany.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Cipany.m3u8",
+    "roi_polygon": [
+      [[0, 407], [7, 479], [208, 477], [290, 265], [630, 353], [636, 319], [299, 222], [288, 187], [266, 179]]
+    ]
   },
   {
     "no": "052",
@@ -405,7 +502,10 @@
     "cctv_name": "CCTV CIPAGANTI-NYLAND 02",
     "lat": "-6.90212695",
     "lng": "107.6028763",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Cipanyl.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Cipanyl.m3u8",
+    "roi_polygon": [
+      [[186, 114], [241, 206], [466, 367], [638, 467], [8, 474], [0, 352], [119, 225], [168, 116]]
+    ]
   },
   {
     "no": "053",
@@ -413,7 +513,10 @@
     "cctv_name": "CCTV DAGO 1-CIKAPAYANG 01",
     "lat": "-6.899000105",
     "lng": "107.6126426",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Dagcik.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Dagcik.m3u8",
+    "roi_polygon": [
+      [[632, 476], [8, 480], [10, 187], [336, 130], [438, 143], [411, 196], [422, 218], [637, 272]]
+    ]
   },
   {
     "no": "054",
@@ -429,7 +532,10 @@
     "cctv_name": "CCTV DAGO 2-SMA 1 02",
     "lat": "-6.894971581",
     "lng": "107.6127949",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Dagsma.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Dagsma.m3u8",
+    "roi_polygon": [
+      [[212, 217], [222, 475], [584, 476], [370, 319], [253, 198]]
+    ]
   },
   {
     "no": "056",
@@ -437,7 +543,10 @@
     "cctv_name": "CCTV DAGO 3-BORROMEUS 01",
     "lat": "-6.894274492",
     "lng": "107.6137353",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Dagbr.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Dagbr.m3u8",
+    "roi_polygon": [
+      [[266, 246], [270, 473], [636, 477], [517, 326], [385, 196], [348, 191]]
+    ]
   },
   {
     "no": "057",
@@ -445,7 +554,10 @@
     "cctv_name": "CCTV DAGO 3-BORROMEUS 02",
     "lat": "-6.894274492",
     "lng": "107.6137353",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Dagbor.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Dagbor.m3u8",
+    "roi_polygon": [
+      [[28, 248], [65, 214], [227, 182], [366, 90], [444, 96], [399, 477], [5, 474], [2, 392], [66, 335], [73, 292]]
+    ]
   },
   {
     "no": "058",
@@ -453,7 +565,10 @@
     "cctv_name": "CCTV DAGO 4 01",
     "lat": "-6.886410854",
     "lng": "107.6139605",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Dagos.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Dagos.m3u8",
+    "roi_polygon": [
+      [[4, 347], [8, 473], [600, 477], [636, 350], [634, 279], [640, 184], [622, 140]]
+    ]
   },
   {
     "no": "059",
@@ -461,7 +576,10 @@
     "cctv_name": "CCTV DAGO 4 02",
     "lat": "-6.886410854",
     "lng": "107.6139605",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Dagoss.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Dagoss.m3u8",
+    "roi_polygon": [
+      [[180, 476], [634, 476], [638, 419], [195, 105], [158, 110], [118, 234]]
+    ]
   },
   {
     "no": "060",
@@ -469,7 +587,10 @@
     "cctv_name": "CCTV DALAM KAUM-PEDESTRIAN 01",
     "lat": "-6.922527321",
     "lng": "107.6065094",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Dalkam.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Dalkam.m3u8",
+    "roi_polygon": [
+      [[426, 208], [499, 475], [636, 478], [637, 424], [640, 345], [460, 163], [438, 172]]
+    ]
   },
   {
     "no": "061",
@@ -485,7 +606,10 @@
     "cctv_name": "CCTV DEPAN PENDOPO 01",
     "lat": "-6.922566343",
     "lng": "107.606571",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Deppen.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Deppen.m3u8",
+    "roi_polygon": [
+      [[12, 104], [363, 475], [634, 476], [638, 382], [578, 337], [556, 224], [530, 221], [520, 301], [472, 322], [47, 92]]
+    ]
   },
   {
     "no": "063",
@@ -493,7 +617,11 @@
     "cctv_name": "CCTV DEPAN PENDOPO 02",
     "lat": "-6.922566343",
     "lng": "107.606571",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Deppendo.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Deppendo.m3u8",
+    "roi_polygon": [
+      [[584, 290], [598, 307], [513, 362], [226, 475], [6, 478], [1, 357], [58, 333], [189, 325], [435, 313]],
+      [[54, 41], [79, 51], [75, 75], [96, 111], [158, 159], [506, 238], [542, 274], [128, 190], [58, 164], [8, 127], [2, 77]]
+    ]
   },
   {
     "no": "064",
@@ -509,7 +637,10 @@
     "cctv_name": "CCTV DEPAN RSUD UJUNG BERUNG 02",
     "lat": "-6.915360811304235",
     "lng": "107.6994037628174",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/rsudd.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/rsudd.m3u8",
+    "roi_polygon": [
+      [[309, 320], [338, 479], [84, 479], [176, 258], [307, 247]]
+    ]
   },
   {
     "no": "066",
@@ -517,7 +648,10 @@
     "cctv_name": "CCTV DEPAN TERMINAL CICAHEUM 01",
     "lat": "-6.902483837056027",
     "lng": "107.65726625919343",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/terminalcicaheum.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/terminalcicaheum.m3u8",
+    "roi_polygon": [
+      [[5, 236], [6, 475], [358, 479], [352, 278], [319, 108], [262, 102]]
+    ]
   },
   {
     "no": "067",
@@ -525,7 +659,10 @@
     "cctv_name": "CCTV DEPAN TERMINAL CICAHEUM 02",
     "lat": "-6.902398628449292",
     "lng": "107.65654742717744",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/terminalcicaheumm.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/terminalcicaheumm.m3u8",
+    "roi_polygon": [
+      [[78, 364], [87, 474], [618, 478], [638, 344], [404, 233], [310, 184], [236, 206]]
+    ]
   },
   {
     "no": "068",
@@ -533,7 +670,10 @@
     "cctv_name": "CCTV DIPATIUKUR SEKELOA 01",
     "lat": "-6.892916163",
     "lng": "107.6183134",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Dipaunpad.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Dipaunpad.m3u8",
+    "roi_polygon": [
+      [[208, 78], [277, 63], [339, 112], [388, 109], [419, 140], [629, 301], [634, 473], [442, 475], [242, 355]]
+    ]
   },
   {
     "no": "069",
@@ -541,7 +681,10 @@
     "cctv_name": "CCTV DIPATIUKUR SEKELOA 02",
     "lat": "-6.892916163",
     "lng": "107.6183134",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Dipaunp.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Dipaunp.m3u8",
+    "roi_polygon": [
+      [[0, 379], [6, 475], [331, 478], [420, 192], [396, 185], [319, 211]]
+    ]
   },
   {
     "no": "070",
@@ -549,7 +692,10 @@
     "cctv_name": "CCTV DIPATI UKUR-UNIKOM 01",
     "lat": "-6.886720063",
     "lng": "107.6154174",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Dipaun.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Dipaun.m3u8",
+    "roi_polygon": [
+      [[402, 94], [162, 284], [0, 440], [5, 474], [361, 477], [424, 281], [458, 132]]
+    ]
   },
   {
     "no": "071",
@@ -557,7 +703,10 @@
     "cctv_name": "CCTV DIPATI UKUR-UNIKOM 02",
     "lat": "-6.886720063",
     "lng": "107.6154174",
-    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Dipaunik.m3u8"
+    "stream_cctv": "https://pelindung.bandung.go.id:3443/video/HIKSVISION/Dipaunik.m3u8",
+    "roi_polygon": [
+      [[236, 128], [318, 121], [637, 346], [635, 475], [490, 472], [342, 472]]
+    ]
   },
   {
     "no": "072",
