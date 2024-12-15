@@ -60,4 +60,39 @@ class LocalDB:
         finally:
             cursor.close()
 
+    def get_cctv_latest(self):
+        cursor = self.conn.cursor()
+        try:
+            cursor.execute("SELECT dt FROM table_history ORDER BY dt DESC LIMIT 1")
+            # Fetch the result
+            rows = cursor.fetchall()  # Use fetchone() if you expect only one row
+
+            latest_dt = rows[0][0]
+
+            cursor.execute("SELECT * FROM table_history WHERE dt = ? ORDER BY total DESC", (latest_dt,))
+
+            # Fetch the result
+            rows = cursor.fetchall()
+
+            # Get column names from the cursor
+            column_names = [desc[0] for desc in cursor.description]
+
+            # Specify the keys to include (e.g., first and third columns)
+            keys_to_include = ['no', 'car', 'truck', 'bus', 'motorcycle', 'total', 'dt', 'lastUpdated']
+
+            # Convert tuples to a list of filtered dictionaries
+            result = [
+                {key: row[column_names.index(key)] for key in keys_to_include if key in column_names}
+                for row in rows
+            ]
+
+            if result:
+                return result
+            else:
+                return []
+        except sqlite3.Error as e:
+            print(f"An error occurred: {e}")
+            return []
+        finally:
+            cursor.close()
 

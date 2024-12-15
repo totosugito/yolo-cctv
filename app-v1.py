@@ -48,7 +48,7 @@ yoloModel = YOLO(yoloModelPath)  # load the YOLO model
 cctvLatestData = []
 
 
-def capture_cctv(timestamp, cctv, thread_id):
+def capture_cctv(day_dir, timestamp, cctv, thread_id):
     cctv_url = cctv['stream_cctv']
     cctv_no = cctv['no']
     roi_polygons = cctv.get('roi_polygon', [])  # Get ROI polygons from cctv data
@@ -132,13 +132,13 @@ def capture_cctv(timestamp, cctv, thread_id):
         cv2.polylines(frame_with_detections, [polygon_array], isClosed=True, color=(0, 0, 255), thickness=1)
 
     # Save the frame as an image
-    image_filename = os.path.join(streamDir, "images/",
+    image_filename = os.path.join(streamDir, "images/", day_dir,
                                   f"{cctv_no}_{timestamp}.jpg")  # Generate timestamp-based filename
     os.makedirs(os.path.dirname(image_filename), exist_ok=True)
     cv2.imwrite(image_filename, frame_with_detections, [cv2.IMWRITE_JPEG_QUALITY, jpegQuality])
 
     # Save the data as a JSON file
-    json_filename = os.path.join(streamDir, "data/", f"{cctv_no}_{timestamp}.json")
+    json_filename = os.path.join(streamDir, "data/",  day_dir, f"{cctv_no}_{timestamp}.json")
     os.makedirs(os.path.dirname(json_filename), exist_ok=True)
     with open(json_filename, 'w') as file:
         json.dump(results_, file, indent=1)
@@ -148,6 +148,7 @@ def capture_cctv(timestamp, cctv, thread_id):
 
 def get_latest_cctv_data(ts, timestamp):
     global cctvLatestData
+    day_dir = timestamp[:10]
     cctv_list_ = [cctv for cctv in cctvList if cctv.get('roi_polygon')]
 
     results_ = {
@@ -156,7 +157,7 @@ def get_latest_cctv_data(ts, timestamp):
     }
     tmp_data = []
     for cctv in cctv_list_:
-        filename = os.path.join(streamDir, "data/", f"{cctv['no']}_{timestamp}.json")
+        filename = os.path.join(streamDir, "data/", day_dir, f"{cctv['no']}_{timestamp}.json")
         if os.path.exists(filename):
             with open(filename, 'r') as file:
                 try:
@@ -184,11 +185,12 @@ def periodic_task():
     while True:
         dt = datetime.now()
         timestamp = dt.strftime("%Y-%m-%d_%H-%M-%S")
+        day_dir = timestamp[:10]
         ts = dt.timestamp()
 
         threads = []
         for i, cctv in enumerate(cctv_list_):
-            thread = threading.Thread(target=capture_cctv, args=(timestamp, cctv, i))
+            thread = threading.Thread(target=capture_cctv, args=(day_dir,timestamp, cctv, i))
             thread.start()
             threads.append(thread)
 
