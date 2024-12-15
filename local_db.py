@@ -1,3 +1,4 @@
+import json
 import sqlite3
 
 
@@ -13,6 +14,34 @@ class LocalDB:
 
     def close_db(self):
         self.conn.close()
+
+    def add_cctv(self, cctv_list):
+        cursor = self.conn.cursor()
+
+        # Prepare the data for insertion
+        # Serialize the roi_polygon field as a JSON string
+        data_to_insert = [
+            {
+                "no": item["no"],
+                "cctv_name": item["cctv_name"],
+                "lat": item["lat"],
+                "lng": item["lng"],
+                "stream_cctv": item["stream_cctv"],
+                "roi_polygon": json.dumps(item.get("roi_polygon", []))  # Serialize nested data
+            }
+            for item in cctv_list
+        ]
+
+        # Insert data into the table
+        print(f"Inserting {len(data_to_insert)} rows into table_cctv")
+        cursor.executemany('''
+        INSERT INTO table_cctv (no, cctv_name, lat, lng, stream_cctv, roi_polygon)
+        VALUES (:no, :cctv_name, :lat, :lng, :stream_cctv, :roi_polygon)
+        ''', data_to_insert)
+
+        # Commit the transaction and close the connection
+        self.conn.commit()
+
 
     def add_cctv_history(self, ts, timestamp, cctv_list):
         cursor = self.conn.cursor()
@@ -69,7 +98,9 @@ class LocalDB:
 
             latest_dt = rows[0][0]
 
-            cursor.execute("SELECT * FROM table_history WHERE dt = ? ORDER BY total DESC", (latest_dt,))
+            cursor.execute("SELECT table_history.*, table_cctv.* FROM table_history "
+                           "INNER JOIN table_cctv ON table_history.no = table_cctv.no "
+                           "WHERE dt = ? ORDER BY total DESC", (latest_dt,))
 
             # Fetch the result
             rows = cursor.fetchall()
@@ -78,7 +109,8 @@ class LocalDB:
             column_names = [desc[0] for desc in cursor.description]
 
             # Specify the keys to include (e.g., first and third columns)
-            keys_to_include = ['no', 'car', 'truck', 'bus', 'motorcycle', 'total', 'dt', 'lastUpdated']
+            keys_to_include = ['no', 'car', 'truck', 'bus', 'motorcycle', 'total', 'dt', 'lastUpdated',
+                               'cctv_name', 'lat', 'lng', 'stream_cctv']
 
             # Convert tuples to a list of filtered dictionaries
             result = [

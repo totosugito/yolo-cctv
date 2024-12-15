@@ -67,7 +67,11 @@ def cctv_latest():
     latest_data = db_.get_cctv_latest()
     db_.close_db()
 
-    return latest_data
+    last_update = ""
+    if len(latest_data) > 0:
+        last_update = latest_data[0]["lastUpdated"]
+
+    return jsonify({"timestamp": last_update, "data": latest_data}), 200
 
 
 # ------------------------------------------------------------------------------

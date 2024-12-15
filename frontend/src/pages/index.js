@@ -1,5 +1,5 @@
 import React from 'react'
-const Page404 = React.lazy(() => import('./page404/Page404'));
-const UiHome = React.lazy(() => import('./ui-home/UiHome'));
-const UiMonitoring = React.lazy(() => import('./ui-monitoring/UiMonitoring'));
-export {Page404, UiHome, UiMonitoring}
+export const Page404 = React.lazy(() => import("./Page404/Page404.jsx"));
+export const Login = React.lazy(() => import("./Login/Login.jsx"));
+export const UiHome = React.lazy(() => import('./UiHome/UiHome.jsx'));
+export const UiMonitoring = React.lazy(() => import('./UiMonitoring/UiMonitoring.jsx'));
