@@ -63,7 +63,15 @@ class LocalDB:
     def get_cctv_history(self, no):
         cursor = self.conn.cursor()
         try:
-            cursor.execute("SELECT * FROM table_history WHERE no = ?", (no,))
+            cursor.execute("SELECT dt FROM table_history WHERE no = ? ORDER BY dt DESC LIMIT 1", (no,))
+            # Fetch the result
+            rows = cursor.fetchall()  # Use fetchone() if you expect only one row
+
+            latest_dt = rows[0][0]
+            last_dt = latest_dt - (30 * 24 * 60 * 60)  # a month ago
+
+            cursor.execute("SELECT * FROM table_history WHERE ((no = ?) AND (dt > ?)) ", (no, last_dt))
+
             # Fetch the result
             rows = cursor.fetchall()  # Use fetchone() if you expect only one row
 
