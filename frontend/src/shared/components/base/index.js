@@ -8,6 +8,7 @@ import SidebarLink from "./SidebarLink.jsx";
 import WebFooter from "./WebFooter.jsx";
 import WebLoading from "./WebLoading.jsx";
 import WebLogo from "./WebLogo.jsx";
+import CardLayout from "./CardLayout.jsx";
 
 export {
   AppSidebar,
@@ -19,6 +20,7 @@ export {
   SidebarLink,
   WebFooter,
   WebLoading,
-  WebLogo
+  WebLogo,
+  CardLayout
 }
 

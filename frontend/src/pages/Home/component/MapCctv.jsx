@@ -2,22 +2,25 @@ import {MapContainer, TileLayer, ScaleControl, Marker, Popup} from "react-leafle
 import {useState} from "react";
 import "src/assets/leaflet/leaflet.css";
 import DialogCctvDetails from "./DialogCctvDetails";
-import {MapControl, ViewCustomLegend} from "shared/map";
+import {MapControl, ViewCustomLegend} from "shared/components/map";
 import {defaultMapProps, getMarkerColor, getTileMap, mapLegendTraffic} from "src/constants/map-config";
 import {useTranslation} from "react-i18next";
+import {useNavigate} from "react-router-dom";
+import {AppRoutes} from "src/routers/router";
 
 const MapCctv = ({points, timestamp}) => {
   const {t} = useTranslation();
   const [map, setMap] = useState(null);
-  const [selectedTile, setSelectedTile] = useState("default");
+  const [selectedTile, setSelectedTile] = useState("opentstreetmap");
   const MapProps = defaultMapProps();
   const [confirmationModal, setConfirmationModal] = useState(null);
+  const navigate = useNavigate();
 
   const createCustomMarker = (point) => {
     const markerProp = {
       borderColor: "#000",
-      bgColor: getMarkerColor(point?.data?.total ?? 0),
-      label: point?.data?.total ?? 0,
+      bgColor: getMarkerColor(point?.total ?? 0),
+      label: point?.total ?? 0,
     };
     const html = `<div
       class="flex w-[24px] h-[24px] rounded-full text-[9px] items-center
@@ -41,23 +44,15 @@ const MapCctv = ({points, timestamp}) => {
 
   const createCustomPopup = (point) => {
     return (
-      <div className="dynamic-popup">
-        <div className={"font-bold text-sm"}>{point?.cctv?.no}. {point?.cctv?.cctv_name}</div>
-        <div>Motor : {point?.data?.count?.motorcycle ?? 0}</div>
-        <div>Mobil : {point?.data?.count?.car ?? 0}</div>
-        <div>Bis : {point?.data?.count?.bus ?? 0}</div>
-        <div>Truck : {point?.data?.count?.truck ?? 0}</div>
-        <button className={"btn btn-sm btn-neutral mt-2"}
-          onClick={() =>
-          setConfirmationModal({
-            btn1Text: "Close",
-            cctv: point,
-            timestamp: timestamp,
-            btn1Handler: () => setConfirmationModal(null),
-          })
-        }>
-          Details
-        </button>
+      <div className={"flex flex-col gap-2"}>
+        <div className={"font-bold text-sm"}>{point?.no}. {point?.cctv_name}</div>
+        <DialogCctvDetails cctv={point} timestamp={timestamp}/>
+        <div className={"flex w-full justify-end"}>
+          <button className={"btn btn-sm btn-primary mt-2"}
+            onClick={() => navigate(`${AppRoutes.cctvHistory.to}/${point?.no}`)}>
+            Details
+          </button>
+        </div>
       </div>
     );
   }
@@ -82,7 +77,7 @@ const MapCctv = ({points, timestamp}) => {
 
         {points.map((point, index) => (
           <Marker key={index} position={[point.lat, point.lng]} icon={createCustomMarker(point)}>
-            <Popup>{createCustomPopup(point)}</Popup>
+            <Popup minWidth={450} maxWidth={500}>{createCustomPopup(point)}</Popup>
           </Marker>
         ))}
         <ScaleControl imperial={false}/>

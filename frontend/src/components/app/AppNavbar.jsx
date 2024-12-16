@@ -9,8 +9,10 @@ import {useDispatch, useSelector} from "react-redux";
 import {useTranslation} from "react-i18next";
 import {setUserLogin} from "shared/store/authSlice";
 import {AppRoutes} from "src/routers/router";
+import { PiTelegramLogoFill } from "react-icons/pi";
+import {BOT_URL} from "src/constants/config";
 
-const AppNavbar = ({timestamp, lastCheck}) => {
+const AppNavbar = ({title}) => {
   const {t} = useTranslation();
   const dispatch = useDispatch();
   const {openSideMenu} = useSelector((state) => state.sidebar);
@@ -23,44 +25,50 @@ const AppNavbar = ({timestamp, lastCheck}) => {
     navigate(AppRoutes.login.to);
   }
 
-  const timestampToText = () => {
-    if(timestamp === "") {
-      return ("-");
-    }
-    const [datePart, timePart] = timestamp.split('_');
-    const [year, month, day] = datePart.split('-');
-    const [hour, minute, second] = timePart.split('-');
-
-    return `${day}/${month}/${year} ${hour}:${minute}:${second}`;
+  const openBotUrl = () => {
+    window.open(BOT_URL, "_blank");
   }
+
   return (
     <div className="navbar flex flex-row w-full items-center justify-between shadow px-2" ref={headerRef}>
       <div className={"flex w-full gap-x-[20px]"}>
         <div className={"flex flex-row items-center gap-x-2 cursor-pointer"} onClick={() => navigate("/")}>
           <img src={logo} alt={""} className={"w-[32px]"}/>
           <div className={"flex flex-col"}>
-          <span className={"font-bold text-lg"}>CCTV-Tracker</span>
-          <span className={"text-xs font bold text-blue-800"}>by WAVIV</span>
+            <span className={"font-bold text-lg"}>CCTV-Tracker</span>
+            <span className={"text-xs font bold text-blue-800"}>by WAVIV</span>
           </div>
         </div>
-        <div className="ml-[10px] p-2">
-          <div className={"text-lg md:text-xl truncate text-center text-primary"}>Server Data : {timestampToText()}</div>
-          <div className={"text-xs text-neutral"}>Last Check : {lastCheck}</div>
-        </div>
+        {title}
       </div>
 
       <div className={"flex gap-x-4"}>
-        <button className="btn btn-ghost btn-circle" onClick={() => {
+        <div className="btn btn-ghost  w-[80px]" onClick={() => {
           navigate(AppRoutes.dashboard.to);
         }}>
-          <FaRegMap className={"text-2xl"}/>
-        </button>
+          <div className={"flex flex-col items-center gap-y-1"}>
+            <div><FaRegMap className={"text-xl"}/></div>
+            <div className={"text-xs font-normal"}>Map</div>
+          </div>
+        </div>
 
-        <button className="btn btn-ghost btn-circle" onClick={() => {
+        <div className="btn btn-ghost  w-[80px]" onClick={() => {
           navigate(AppRoutes.monitoring.to);
         }}>
-          <BsCameraReels className={"text-2xl"}/>
-        </button>
+          <div className={"flex flex-col items-center gap-y-1"}>
+            <div><BsCameraReels className={"text-xl"}/></div>
+            <div className={"text-xs font-normal"}>Monitoring</div>
+          </div>
+        </div>
+
+        <div className="btn btn-ghost  w-[80px]" onClick={() => {
+          openBotUrl();
+        }}>
+          <div className={"flex flex-col items-center gap-y-1"}>
+            <div><PiTelegramLogoFill className={"text-xl"}/></div>
+            <div className={"text-xs font-normal"}>Notification</div>
+          </div>
+        </div>
 
         <button className="btn btn-ghost btn-circle" onClick={() => {
           setConfirmationModal({

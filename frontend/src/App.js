@@ -1,8 +1,8 @@
-import './styles.scss'
+import 'src/assets/styles.scss'
 import './i18n';
 import {Route, Routes} from "react-router-dom";
 import {Suspense} from "react";
-import {Login, Page404, UiHome, UiMonitoring} from "src/pages";
+import {Login, Page404, Home, Monitoring, CctvHistory} from "src/pages";
 import {useSelector} from "react-redux";
 import {useTranslation} from "react-i18next";
 import {ProtectedRoute} from "shared/components/auth";
@@ -29,14 +29,10 @@ function App() {
                 <BaseLayout/>
               </ProtectedRoute>
             }>
-              <Route path={AppRoutes.root.href} element={<UiHome/>}/>
-              <Route path={AppRoutes.dashboard.href} element={<UiHome/>}/>
-              <Route exact path={AppRoutes.monitoring.href} element={<UiMonitoring/>}/>
-              {/*<Route path={AppRoutes.productionData.to} element={<ProductionData/>}/>*/}
-              {/*<Route path={AppRoutes.oilLosses.to} element={<OilLosses/>}/>*/}
-              {/*<Route path={AppRoutes.actualOil.to} element={<ActualOil/>}/>*/}
-              {/*<Route path={AppRoutes.actualGas.to} element={<ActualGas/>}/>*/}
-              {/*<Route path={AppRoutes.vesselTracking.to} element={<VesselTracking/>}/>*/}
+              <Route path={AppRoutes.root.href} element={<Home/>}/>
+              <Route path={AppRoutes.dashboard.href} element={<Home/>}/>
+              <Route exact path={AppRoutes.monitoring.href} element={<Monitoring/>}/>
+              <Route exact path={AppRoutes.cctvHistory.href} element={<CctvHistory/>}/>
             </Route>
           }
 

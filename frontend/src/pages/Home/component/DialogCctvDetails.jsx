@@ -6,20 +6,20 @@ export default function DialogCctvDetails({cctv, timestamp}) {
     <div className="w-full">
         <div className={"flex flex-row gap-x-6 items-center justify-center my-2"}>
           <div className="flex flex-col items-center justify-center my-2">
-            <FaMotorcycle className={"dialog-item-icon"}/>
-            <div className={"dialog-item-label"}>{cctv.motorcycle ?? 0}</div>
+            <FaMotorcycle className={"shared-dialog-item-icon"}/>
+            <div className={"shared-dialog-item-label"}>{cctv.motorcycle ?? 0}</div>
           </div>
           <div className="flex flex-col items-center justify-center my-2">
-            <FaCarSide className={"dialog-item-icon"}/>
-            <div className={"dialog-item-label"}>{cctv?.car ?? 0}</div>
+            <FaCarSide className={"shared-dialog-item-icon"}/>
+            <div className={"shared-dialog-item-label"}>{cctv?.car ?? 0}</div>
           </div>
           <div className="flex flex-col items-center justify-center my-2">
-            <FaBus className={"dialog-item-icon"}/>
-            <div className={"dialog-item-label"}>{cctv?.bus ?? 0}</div>
+            <FaBus className={"shared-dialog-item-icon"}/>
+            <div className={"shared-dialog-item-label"}>{cctv?.bus ?? 0}</div>
           </div>
           <div className="flex flex-col items-center justify-center my-2">
-            <FaTruck className={"dialog-item-icon"}/>
-            <div className={"dialog-item-label"}>{cctv?.truck ?? 0}</div>
+            <FaTruck className={"shared-dialog-item-icon"}/>
+            <div className={"shared-dialog-item-label"}>{cctv?.truck ?? 0}</div>
           </div>
         </div>
         <div>

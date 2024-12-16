@@ -21,8 +21,8 @@ const ModalDialog = ({modal}) => {
           </div>
 
           <div className="flex items-center gap-x-4 px-3 justify-end mt-2">
-            {modal?.cancelText && <button className="my-btn-cancel" onClick={modal?.onCancelClick}>{modal?.cancelText}</button>}
-            {modal?.confirmText && <button className="my-btn-confirm" onClick={modal?.onConfirmClick}>{modal?.confirmText}</button>}
+            {modal?.cancelText && <button className="shared-btn-cancel" onClick={modal?.onCancelClick}>{modal?.cancelText}</button>}
+            {modal?.confirmText && <button className="shared-btn-confirm" onClick={modal?.onConfirmClick}>{modal?.confirmText}</button>}
           </div>
         </div>
       </div>

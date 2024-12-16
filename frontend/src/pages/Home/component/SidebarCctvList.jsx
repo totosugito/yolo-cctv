@@ -3,9 +3,12 @@ import {useState} from "react";
 import DialogCctvDetails from "./DialogCctvDetails";
 import {getMarkerColor} from "src/constants/map-config";
 import {ModalDialog} from "shared/components/dialog";
+import {AppRoutes} from "src/routers/router";
+import {useNavigate} from "react-router-dom";
 
 const SidebarCctvList = ({timestamp, data}) => {
   const [confirmationModal, setConfirmationModal] = useState(null);
+  const navigate = useNavigate();
 
   return (
     <div className={"flex flex-col min-w-[270px] p-3 overflow-auto"} style={{height: `calc(100vh - 80px)`}} data-theme="dark">
@@ -16,18 +19,23 @@ const SidebarCctvList = ({timestamp, data}) => {
         return (
           <div key={index} className={"flex flex-col gap-2 mb-1"}>
             <div className={"flex flex-row gap-2 items-center"}>
-              <div className={"avatar w-[32px] h-[32px] rounded-full justify-center items-center text-xs shadow-md cursor-pointer text-neutral font-bold"}
-                   style={{backgroundColor: getMarkerColor(item?.total ?? 0)}}
-                   onClick={() =>
-                     setConfirmationModal({
-                       title: item?.no + ". " + item?.cctv_name,
-                       content: <DialogCctvDetails cctv={item} timestamp={timestamp}/>,
-                       confirmText: "Close",
-                       styles: "w-10/12 max-w-[800px]",
-                       onConfirmClick: () => setConfirmationModal(null),
-                       onCancelClick: () => setConfirmationModal(null),
-                     })
-                   }
+              <div
+                className={"avatar w-[32px] h-[32px] rounded-full justify-center items-center text-xs shadow-md cursor-pointer text-neutral font-bold"}
+                style={{backgroundColor: getMarkerColor(item?.total ?? 0)}}
+                onClick={() =>
+                  setConfirmationModal({
+                    title: item?.no + ". " + item?.cctv_name,
+                    content: <DialogCctvDetails cctv={item} timestamp={timestamp}/>,
+                    styles: "w-10/12 max-w-[800px]",
+                    confirmText: "Details",
+                    cancelText: "Close",
+                    onConfirmClick: () => {
+                      setConfirmationModal(null);
+                      navigate(`${AppRoutes.cctvHistory.to}/${item?.no}`)
+                    },
+                    onCancelClick: () => setConfirmationModal(null),
+                  })
+                }
               >
                 {item?.total ?? 0}
               </div>
@@ -60,7 +68,9 @@ const SidebarCctvList = ({timestamp, data}) => {
         );
       })}
 
-      {confirmationModal && <ModalDialog modal={confirmationModal} />}
+      <div data-theme="light">
+        {confirmationModal && <ModalDialog modal={confirmationModal}/>}
+      </div>
     </div>
   )
 }

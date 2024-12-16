@@ -1,13 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import {AppFooter, AppNavbar, BodyContents} from "src/components/app";
-import {IntervalCheckApi, SERVER_URL} from "src/constants/config";
+import {IntervalCheckApi} from "src/constants/config";
 import toast from "react-hot-toast";
 import {WebLoading} from "shared/components/base";
-import {httpGet} from "shared/service/http-api";
 import MapCctv from "./component/MapCctv";
 import SidebarCctvList from "./component/SidebarCctvList";
 import {getFormattedDateTime} from "src/constants/map-config";
-function UiHome() {
+import {http_cctv_latest} from "src/services/cctvAPI";
+import {timestampToText} from "src/utils/utils";
+function Home() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(null);
   const [lastCheck, setLastCheck] = useState("");
@@ -16,15 +17,12 @@ function UiHome() {
     if(showLoading) {
       setLoading(true);
     }
-    await httpGet(SERVER_URL + "/cctv-latest", {}).then(response => {
-      if (response.isError) {
-        console.log(response);
-      } else {
-        if(data?.timestamp !== response?.timestamp) {
-          setData(response);
-        }
+
+    await http_cctv_latest().then(response => {
+      if (data?.timestamp !== response?.timestamp) {
+        setData(response);
       }
-    });
+    })
     setLastCheck(getFormattedDateTime());
     toast.success("Data Updated ...");
 
@@ -46,7 +44,12 @@ function UiHome() {
 
   return (
     <div className={"h-screen flex flex-col"}>
-      <AppNavbar timestamp={data?.timestamp ?? ""} lastCheck={lastCheck}/>
+      <AppNavbar title={
+        <div className="ml-[200px] p-2">
+          <div className={"text-lg md:text-xl truncate text-center text-primary"}>Server Data : {timestampToText(data?.timestamp ?? "")}</div>
+          <div className={"text-xs text-neutral"}>Last Check : {lastCheck}</div>
+        </div>
+      }/>
       {loading ? <WebLoading/> : <BodyContents>
         <div className={"flex flex-row h-full"}>
           <SidebarCctvList data={data?.data ?? []} timestamp={data?.timestamp ?? ""}/>
@@ -60,4 +63,4 @@ function UiHome() {
   );
 }
 
-export default UiHome;
+export default Home;

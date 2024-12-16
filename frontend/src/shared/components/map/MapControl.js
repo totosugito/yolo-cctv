@@ -23,13 +23,13 @@ const MapControl = ({ children, selectedTile, setSelectedTile, ...props }) => {
       <div className={"flex flex-col mt-[10px]"}>
         <CompassControl />
         <FullscreenControl/>
-        <button className={"mt-[30px] my-group-button-first"} onClick={handleZoomIn}><FaPlus /></button>
-        <button className={"my-group-button-mid"} onClick={handleZoomOut}><FaMinus /></button>
-        <button className={"my-group-button-last"} onClick={() => {
+        <button className={"mt-[30px] shared-group-button-first"} onClick={handleZoomIn}><FaPlus /></button>
+        <button className={"shared-group-button-mid"} onClick={handleZoomOut}><FaMinus /></button>
+        <button className={"shared-group-button-last"} onClick={() => {
           setInfoViewMode("tile");
           setShowInput(true);
         }}><FaLayerGroup /></button>
-        <button className={"mt-4 my-group-button-self"} onClick={() => {
+        <button className={"mt-4 shared-group-button-self"} onClick={() => {
           setInfoViewMode("legend");
           setShowInput(true);
         }}><FaCircleInfo /></button>

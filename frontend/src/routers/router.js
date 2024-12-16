@@ -19,4 +19,9 @@ export const AppRoutes = {
     to: "/monitoring",
     href: "/monitoring",
   },
+  cctvHistory: {
+    name: "CCTV History",
+    to: "/cctv-history",
+    href: "/cctv-history/:no",
+  },
 }

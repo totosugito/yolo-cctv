@@ -1,15 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import {FaBus, FaCarSide, FaMotorcycle, FaTruck} from "react-icons/fa";
 import toast from "react-hot-toast";
-import {httpGet} from "shared/service/http-api";
-import {IntervalCheckApi, SERVER_URL} from "src/constants/config";
+import {IntervalCheckApi} from "src/constants/config";
 import {getCctvImage, getFormattedDateTime} from "src/constants/map-config";
-import DialogCctvDetails from "src/pages/UiHome/component/DialogCctvDetails";
+import DialogCctvDetails from "src/pages/Home/component/DialogCctvDetails";
 import {AppFooter, AppNavbar, BodyContents} from "src/components/app";
 import {WebLoading} from "shared/components/base";
 import {ModalDialog} from "shared/components/dialog";
+import {http_cctv_latest} from "src/services/cctvAPI";
+import {timestampToText} from "src/utils/utils";
 
-function UiMonitoring() {
+function Monitoring() {
   const [confirmationModal, setConfirmationModal] = useState(null);
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(null);
@@ -19,15 +20,13 @@ function UiMonitoring() {
     if(showLoading) {
       setLoading(true);
     }
-    await httpGet(SERVER_URL + "/cctv-latest", {}).then(response => {
-      if (response.isError) {
-        console.log(response);
-      } else {
-        if(data?.timestamp !== response?.timestamp) {
-          setData(response);
-        }
+
+    await http_cctv_latest().then(response => {
+      if (data?.timestamp !== response?.timestamp) {
+        setData(response);
       }
-    });
+    })
+
     setLastCheck(getFormattedDateTime());
     toast.success("Data Updated ...");
 
@@ -49,7 +48,13 @@ function UiMonitoring() {
 
   return (
     <div className={"h-screen flex flex-col"}>
-      <AppNavbar timestamp={data?.timestamp ?? ""} lastCheck={lastCheck}/>
+      <AppNavbar title={
+        <div className="ml-[200px] p-2">
+          <div className={"text-lg md:text-xl truncate text-center text-primary"}>Server Data : {timestampToText(data?.timestamp ?? "")}</div>
+          <div className={"text-xs text-neutral"}>Last Check : {lastCheck}</div>
+        </div>
+      }/>
+
       {loading ? <WebLoading/> : <BodyContents>
         <div className={"grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"}>
           {
@@ -74,23 +79,23 @@ function UiMonitoring() {
 
                     <div className={"flex flex-row gap-x-6 items-center justify-center my-2"}>
                       <div className="flex flex-col items-center justify-center my-2">
-                        <FaMotorcycle className={"dialog-item-icon"}/>
-                        <div className={"dialog-item-label"}>{cctv?.motorcycle ?? 0}</div>
+                        <FaMotorcycle className={"shared-dialog-item-icon"}/>
+                        <div className={"shared-dialog-item-label"}>{cctv?.motorcycle ?? 0}</div>
                         {/*<div className={"text-center"}>Motor</div>*/}
                       </div>
                       <div className="flex flex-col items-center justify-center my-2">
-                        <FaCarSide className={"dialog-item-icon"}/>
-                        <div className={"dialog-item-label"}>{cctv?.car ?? 0}</div>
+                        <FaCarSide className={"shared-dialog-item-icon"}/>
+                        <div className={"shared-dialog-item-label"}>{cctv?.car ?? 0}</div>
                         {/*<div className={"text-center"}>Mobil</div>*/}
                       </div>
                       <div className="flex flex-col items-center justify-center my-2">
-                        <FaBus className={"dialog-item-icon"}/>
-                        <div className={"dialog-item-label"}>{cctv?.bus ?? 0}</div>
+                        <FaBus className={"shared-dialog-item-icon"}/>
+                        <div className={"shared-dialog-item-label"}>{cctv?.bus ?? 0}</div>
                         {/*<div className={"text-center"}>Bis</div>*/}
                       </div>
                       <div className="flex flex-col items-center justify-center my-2">
-                        <FaTruck className={"dialog-item-icon"}/>
-                        <div className={"dialog-item-label"}>{cctv?.truck ?? 0}</div>
+                        <FaTruck className={"shared-dialog-item-icon"}/>
+                        <div className={"shared-dialog-item-label"}>{cctv?.truck ?? 0}</div>
                         {/*<div className={"text-center"}>Truck</div>*/}
                       </div>
                     </div>
@@ -108,4 +113,4 @@ function UiMonitoring() {
   );
 }
 
-export default UiMonitoring;
+export default Monitoring;

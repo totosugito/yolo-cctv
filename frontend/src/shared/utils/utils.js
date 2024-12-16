@@ -1,3 +1,5 @@
+import {format as formatDateFns} from "date-fns";
+
 export const formattedDate = (date) => {
   return new Date(date).toLocaleDateString("en-US", {
     month: "long",
@@ -87,4 +89,28 @@ export const isValidAndNotEmpty = (text) => {
   }
 
   return text.trim().length > 0;
+}
+
+export function to_decimal_formatted(value, precision=2) {
+  const formattedNumber = new Intl.NumberFormat('en', {
+    minimumFractionDigits: precision,
+    maximumFractionDigits: precision
+  }).format(value);
+  return(formattedNumber);
+}
+
+export function date_to_string(value, format_date = "yyyy-MM-dd") {
+  try {
+    return (formatDateFns(value, format_date));
+  } catch (e) {
+    return (formatDateFns(new Date(), format_date));
+  }
+}
+
+export function timestamp_to_string(value, multiplier = 1000, format_date = "yyyy-MM-dd HH:mm") {
+  try {
+    return (formatDateFns(new Date(value*multiplier), format_date));
+  } catch (e) {
+    return (formatDateFns(new Date(), format_date));
+  }
 }
