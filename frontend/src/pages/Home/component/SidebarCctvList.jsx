@@ -50,7 +50,7 @@ const SidebarCctvList = ({timestamp, data}) => {
                   </div>
                   <div className={"flex flex-row gap-x-1"}>
                     <FaCarSide className={"text-xl"}/>
-                    <div>{item?.data?.car ?? 0}</div>
+                    <div>{item?.car ?? 0}</div>
                   </div>
                   <div className={"flex flex-row gap-x-1"}>
                     <FaBus className={"text-xl"}/>
